@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Instalk — Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Instalk (Prototype)</h1>
+
+    <div id="loginBox" class="card">
+      <h3>Login (username)</h3>
+      <input id="usernameInput" placeholder="Enter username" />
+      <button id="loginBtn">Login</button>
+      <div id="loginMsg" class="muted"></div>
+    </div>
+
+    <div id="lobby" class="card hidden">
+      <p>Logged in as <b id="meName"></b></p>
+      <button id="findBtn">Find partner</button>
+      <button id="stopBtn" class="hidden">Stop search</button>
+      <div id="lobbyMsg" class="muted"></div>
+    </div>
+
+    <div id="chatCard" class="card hidden">
+      <h3>Paired with <span id="partnerName"></span></h3>
+      <div class="row">
+        <textarea id="myInput" placeholder="Type here..."></textarea>
+        <div class="panel">
+          <div><b>Partner sees:</b></div>
+          <div id="partnerText" class="box"></div>
+        </div>
+      </div>
+      <div id="status" class="muted"></div>
+      <button id="unpairBtn">End chat</button>
+    </div>
+
+    <footer class="muted small">Prototype: keystrokes are forwarded live to partner.</footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
